@@ -1,0 +1,42 @@
+{
+  "name": "koa-blog-3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www",
+    "dev-build": "./node_modules/.bin/webpack --config ./webpack/webpack.config.js -w --progress --display-error-details",
+    "prd": "pm2 start bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "co-views": "^2.1.0",
+    "debug": "^2.6.3",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "pug": "^2.0.0-rc.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-hot-loader": "^1.3.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "nodemon": "^1.8.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.5.1"
+  }
+}
