@@ -9,6 +9,7 @@ router.get('/', async (ctx, next) => {
 })
 
 require('./platform/tc').register(router);
+require('./platform/toutiao').register(router);
 
 
 module.exports.register = (app) => {

@@ -5,7 +5,6 @@
 'use strict';
 
 import React, {Component} from 'react';
-import axios from 'axios';
 import Header from '../../components/header';
 import Content from '../../components/content';
 
@@ -16,13 +15,6 @@ export default class DailyRead extends Component {
     }
 
     componentWillMount () {
-        // fetch('/tc').then(res => {
-        //     console.log('推酷', res.body);
-        // });
-        axios.get('/tc').then(res => {
-            console.log('res', res);
-        })
-        
     }
 
     componentWillUnmount () {
