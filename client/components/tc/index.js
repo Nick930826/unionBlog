@@ -2,29 +2,53 @@
  * Created by Nick on 2017-09-24.
  */
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './style.less';
 export default class TC extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataList: []
+            dataList: [],
+            loading: false,
+            page: 1
         };
+        this.page = 0;
     }
-
+    componentWillMount() {
+    }
     componentDidMount() {
-        axios.get('/tc').then(res => {
+        axios.get(`/tc?page=${this.page}`).then(res => {
             this.setState({
-                dataList: res.data.postLists
+                dataList: res.data.postLists,
             });
+            this.page++;
         });
+        const wrapper = this.refs.wrapper;
+        const clientHeight = window.screen.height;
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.body.scrollHeight;
+            const top = wrapper.getBoundingClientRect().top;
+            if (!this.state.loading && top && (~top + clientHeight) > windowHeight) {
+                this.setState({
+                    loading: true
+                });
+                axios.get(`/tc?page=${this.page}`).then(res => {
+                    this.setState({
+                        dataList: this.state.dataList.concat(res.data.postLists),
+                        loading: false
+                    });
+                    this.page++;
+                });
+            }
+        })
+        
     }
 
     render() {
-        const { dataList } = this.state;
-        console.log('dataList', dataList);
+        const { dataList, loading } = this.state;
         return (
-            <div className="tc">
+            <div className="tc" ref="wrapper">
                 <ul>
                     {
                        dataList.length ?
@@ -42,6 +66,11 @@ export default class TC extends Component {
                        : null
                     }
                 </ul>
+                {
+                    loading ?
+                        <div className="load-more">加载更多...</div>
+                        : null
+                }
             </div>
         );
     }

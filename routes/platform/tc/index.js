@@ -7,13 +7,14 @@ const lib = require('../../../lib');
 const tcLib = require('./tclib');
 
 async function tc(ctx, next) {
+    console.log('ctx', ctx.query);
+    const { page } = ctx.query;
     let origin = 'http://www.tuicool.com';
-    let resBody = await rp('http://www.tuicool.com/ah/20?lang=0').then((body) => {
+    let resBody = await rp(`http://www.tuicool.com/ah/20/${page}?lang=0`).then((body) => {
         return body;
     });
     let lists = $(resBody).find('#list_article').children();
     let tcLists = tcLib.parseList(lists);
-    console.log('tcLists', tcLists);
     let arr = lib.listToArr(tcLists);
     ctx.body = {
         postLists:arr
