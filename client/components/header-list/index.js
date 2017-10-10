@@ -2,6 +2,7 @@
  * Created by Nick on 2017-09-23.
  */
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 import './style.less';
 export default class HeaderList extends Component {
     constructor (props){
@@ -17,8 +18,8 @@ export default class HeaderList extends Component {
         return (
             <div className="list">
                 <ul>
-                    <li onClick={() => this.catesClick('推酷')}>推酷</li>
-                    <li onClick={() => this.catesClick('开发者头条')}>开发者头条</li>
+                    <li><Link to={'/'}>学习网站</Link></li>
+                    <li><Link to={'/house'}>房产网站</Link></li>
                 </ul>
             </div>
         );

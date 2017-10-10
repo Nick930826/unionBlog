@@ -9,6 +9,7 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const compress = require('koa-compress');
+const mongoose = require('mongoose');
 
 const routerRegister = require('./routes/index')
 
@@ -49,7 +50,18 @@ routerRegister.register(app);
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
+// mongoose.connect('mongodb://localhost:27017/blog', function(err) {
+//   if (err) {
+//     console.log('数据库连接失败');
+//   } else {
+//     console.log('数据库连接成功');
+//     app.listen('9002','127.0.0.1',  () => {
+//         console.log(process.env.NODE_ENV,'listening on port 9002...');
+//     });
+//   }
+// })
 app.listen('9002','127.0.0.1',  () => {
     console.log(process.env.NODE_ENV,'listening on port 9002...');
 });
+
 module.exports = app

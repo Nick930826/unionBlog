@@ -3,13 +3,13 @@
  */
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { hashHistory } from 'react-router';
+import RouteMap from './route/routeMap.js';
 
 import {$} from './lib';
-import DailyRead from './container/daliy-read';
-
 $(() => {
     ReactDOM.render(
-        <DailyRead />,
+        <RouteMap history={hashHistory}/>,
         document.getElementById('container')
     );
 });

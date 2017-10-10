@@ -5,6 +5,7 @@ const $ = require('cheerio');
 const rp = require('request-promise');
 const lib = require('../../../lib');
 const tcLib = require('./tclib');
+const User = require('../../../models/User');
 
 async function tc(ctx, next) {
     console.log('ctx', ctx.query);
@@ -19,6 +20,14 @@ async function tc(ctx, next) {
     ctx.body = {
         postLists:arr
     }
+    // const user = new User({ username: 'Nick', password: '111111' });
+    // user.save(function(err) {
+    //     if (err) {
+    //         console.log('失败');
+    //     } else {
+    //         console.log('user', user);
+    //     }
+    // });
 }
 
 module.exports.register = (router) => {
