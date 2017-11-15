@@ -5,19 +5,19 @@ const $ = require('cheerio');
 const rp = require('request-promise');
 const lib = require('../../../lib');
 
-async function toutiao(ctx, next) {
+async function seg(ctx, next) {
     const { page } = ctx.query;
-    let origin = 'https://toutiao.io';
-    let resBody = await rp(`https://toutiao.io/c/fe?page=${page}`).then((body) => {
+    let origin = 'https://segmentfault.com';
+    let resBody = await rp(`https://segmentfault.com/t/javascript/blogs?page=${page}`).then((body) => {
         return body;
     });
-    let lists = $(resBody).find('.posts').children();
+    let lists = $(resBody).find('.stream-list').children();
     // let tcLists = tcLib.parseList(lists);
     const articleList = lists.map((index, item) => {
-        const imgUrlObj = $(item).find('.user-avatar a img');
+        const imgUrlObj = $(item).find('.stream-list__item .summary .author li a img');
         const imgUrl = imgUrlObj.attr('src');
-        const articleTitle = $(item).find('.title>a').text();
-        const articleLink = origin + $(item).find('.title>a').attr('href');
+        const articleTitle = $(item).find('.stream-list__item>.summary>.title>a').text();
+        const articleLink = origin + $(item).find('.stream-list__item>.summary>.title>a').attr('href');
         const author = imgUrlObj.attr('alt');
         return {
             imgUrl,
@@ -34,5 +34,5 @@ async function toutiao(ctx, next) {
 }
 
 module.exports.register = (router) => {
-    router.get('/toutiao', toutiao);
+    router.get('/seg', seg);
 };

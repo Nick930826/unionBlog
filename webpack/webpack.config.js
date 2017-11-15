@@ -24,6 +24,7 @@ module.exports = {
                 fallback: 'style-loader',
                 use: ['css-loader']
             })),
+            exclude: /node_modules/
         },{
             test: /\.less$/,
             use: [{
@@ -32,7 +33,8 @@ module.exports = {
                 loader: "css-loader" // translates CSS into CommonJS
             }, {
                 loader: "less-loader" // compiles Less to CSS
-            }]
+            }],
+            exclude: /node_modules/
         }]
     },
 

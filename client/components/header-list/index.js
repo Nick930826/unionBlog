@@ -18,8 +18,8 @@ export default class HeaderList extends Component {
         return (
             <div className="list">
                 <ul>
-                    <li><Link to={'/'}>学习网站</Link></li>
-                    <li><Link to={'/house'}>房产网站</Link></li>
+                    <li><Link to={'/'}>学习</Link></li>
+                    <li><Link to={'/house'}>房产</Link></li>
                 </ul>
             </div>
         );

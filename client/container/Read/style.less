@@ -1,3 +1,50 @@
 .tech-daily-read {
+    display: flex;
+    flex-direction: row;
     margin-top: 50px;
+    height: 100%;
+    background: #f6f6f7;
+    .read-menu {
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        border-right: 1px solid #e9e9e9;
+        li {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 1px solid #e9e9e9;
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                color: #333;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            &:hover {
+                background: #49a9ee;
+                a {
+                    color: #fff;
+                }
+            }
+            &.selected {
+                background: #49a9ee;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .daily-content {
+        width: 100%;
+        margin-left: 250px;
+        background: #f6f6f7;
+        overflow: hidden;
+    }
 }
