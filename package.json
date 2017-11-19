@@ -5,7 +5,8 @@
   "scripts": {
     "start": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
-    "dev-build": "./node_modules/.bin/webpack --config ./webpack/webpack.config.js -w --progress --display-error-details",
+    "dev-server": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --colors",
+    "dev-build": "./node_modules/.bin/webpack --config ./webpack/webpack.produce.js -w --progress --display-error-details",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,10 +43,12 @@
     "css-hot-loader": "^1.3.1",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "nodemon": "^1.8.1",
     "style-loader": "^0.18.2",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.9.4"
   }
 }

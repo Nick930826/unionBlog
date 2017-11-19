@@ -14,7 +14,7 @@ export default class TouTiao extends Component {
             loading: false,
             page: 1
         };
-        this.page = 0;
+        this.page = 1;
     }
     componentWillMount() {
     }
