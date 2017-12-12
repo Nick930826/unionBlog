@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const extensions = ['.js','.jsx'];
 
 module.exports = {
@@ -51,6 +52,9 @@ module.exports = {
             template: path.resolve(__dirname, '../dist/index.html'),
         }),
         new webpack.HotModuleReplacementPlugin(), // 启用 HMR
+        new OpenBrowserPlugin({
+            url: 'http://localhost:3001/dist'
+        }),
         new webpack.DefinePlugin({
             "process.env": { 
                 NODE_ENV: JSON.stringify("production") 

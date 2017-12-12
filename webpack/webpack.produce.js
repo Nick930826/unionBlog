@@ -41,7 +41,7 @@ module.exports = {
         extensions: extensions
     },
     plugins: [
-        new ebpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }

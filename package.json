@@ -47,6 +47,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "nodemon": "^1.8.1",
+    "open-browser-webpack-plugin": "0.0.5",
     "style-loader": "^0.18.2",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.9.4"
