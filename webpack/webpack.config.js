@@ -63,10 +63,10 @@ module.exports = {
     ],
     devServer: {
         proxy: {
-            "/tc": "http://139.196.137.235",
-            "/toutiao": "http://139.196.137.235",
-            "/bole": "http://139.196.137.235",
-            "/seg": "http://139.196.137.235",
+            "/tc": "http://localhost:9002",
+            "/toutiao": "http://localhost:9002",
+            "/bole": "http://localhost:9002",
+            "/seg": "http://localhost:9002",
         },
         hot: true,
         port: 3001,
