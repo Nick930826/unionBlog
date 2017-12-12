@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
+    "start": "NODE_ENV=development PORT=8081 ./node_modules/.bin/nodemon bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "dev-server": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --colors",
     "dev-build": "./node_modules/.bin/webpack --config ./webpack/webpack.produce.js -w --progress --display-error-details",
