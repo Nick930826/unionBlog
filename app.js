@@ -60,8 +60,8 @@ app.on('error', (err, ctx) => {
 //     });
 //   }
 // })
-app.listen('9002','127.0.0.1',  () => {
-    console.log(process.env.NODE_ENV,'listening on port 9002...');
+app.listen('80','127.0.0.1',  () => {
+    console.log(process.env.NODE_ENV,'listening on port 80...');
 });
 
 module.exports = app
