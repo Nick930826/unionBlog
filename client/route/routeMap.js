@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Read from '../container/Read';
 import House from '../container/House';
 import App from '../container/App';
@@ -45,7 +45,7 @@ const routes = {
 class RouteMap extends React.Component {
     render() {
         return (
-            <Router routes={routes} history={this.props.history}></Router>
+            <Router routes={routes} history={browserHistory}></Router>
         )
     }
 }

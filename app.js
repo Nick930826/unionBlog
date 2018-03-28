@@ -61,7 +61,7 @@ app.on('error', (err, ctx) => {
 //   }
 // })
 // 为啥服务器上要0.0.0.0 本地要127.0.0.1
-app.listen('8081','0.0.0.0',  () => {
+app.listen('8081','127.0.0.1',  () => {
     console.log(process.env.PORT,'listening on port 8081...');
 });
 

@@ -3,13 +3,13 @@
  */
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { hashHistory } from 'react-router';
+import { hashHistory, browserHistory } from 'react-router';
 import RouteMap from './route/routeMap.js';
 
 import {$} from './lib';
 $(() => {
     ReactDOM.render(
-        <RouteMap history={hashHistory}/>,
+        <RouteMap/>,
         document.getElementById('container')
     );
 });
